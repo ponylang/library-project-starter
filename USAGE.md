@@ -40,6 +40,31 @@ This repository is templated. You'll want to replace anything in {} with the cor
 - {PROJECT_DESCRIPTION}: a paragraph describing your project
 - {PROJECT_STATUS}: paragraph or two describing the status of your project. Is it alpha? beta? production-ready? What's left to implement?
 
+## About the CI setup
+
+You'll still need to setup TravisCI to take advantage of the included `.travis.yml` file.  To do this you'll need:
+
+- A TravisCI account
+- To grant TravisCI access to your repository
+- Navigate to Settings > Integrations & services in your GitHub project. Do "Add Service" and search for "TravisCI". Add it as an integrated service.
+
+If you've never set up TravisCI before, we strongly suggest you check our their [documentation](https://docs.travis-ci.com/).
+
+### You can also
+
+Set up a TravisCI cron job to run daily against the `master` branch of your repository. If you do, then the included `.travis.yml` file will test your project against both the latest released version of Pony as well as the latest changes on master.
+
+Your PRs will be tested against the last Pony release and any cronjob you set up will be tested using the latest commit to the `master` branch in the [ponylang/ponyc repo](https://github.com/ponylang/ponyc).
+
+### What you might also need
+
+The CI setup only sets up a single matrix Linux build using TravisCI. This is done under the assumption that most libraries won't have OS specific code. If your project does have OS specific code, you'll possibly need add:
+
+- A TravisCI macOS setup
+- Windows CI using appveyor
+
+The CI setup also assumes that your project should perform the same regardless of LLVM version. If that isn't true for your project, you'll need to adjust the TravisCI configuration accordingly.
+
 ## How Make structures your project
 
 The Makefile assumes that your project will have:
