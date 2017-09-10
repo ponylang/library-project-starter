@@ -18,6 +18,7 @@ The contents of this repo are designed to get you up and running with everything
 You still need to add:
 
 - A License
+- A directory at the root of the project containing your Pony source code
 
 ## It's opinionated
 
@@ -39,6 +40,16 @@ This repository is templated. You'll want to replace anything in {} with the cor
 - {COC_EMAIL}: email address that Code of Conduct violations should be reported to, for example: `coc@ponylang.org`.
 - {PROJECT_DESCRIPTION}: a paragraph describing your project
 - {PROJECT_STATUS}: paragraph or two describing the status of your project. Is it alpha? beta? production-ready? What's left to implement?
+
+## What you need to create
+
+Everything in this project assumes that your project has a single package that will be created at the root of the project. For example, if you were creating a project for supporting the MessagePack serialization format in Pony and called your package `msgpack` such that you would do the following to use it in other projects:
+
+```pony
+use "msgpack"
+```
+
+then you have to create a directory called `msgpack` at the root of your repository. All your Pony source code (including tests) will live in that directory. That directory needs to match the value you use for the {PROJECT} variable.
 
 ## About the CI setup
 
