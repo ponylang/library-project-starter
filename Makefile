@@ -1,5 +1,5 @@
 build/{PACKAGE}: build {PACKAGE}/*.pony
-	ponyc {PACKAGE} -o build
+	ponyc {PACKAGE} -o build --debug
 
 build:
 	mkdir build

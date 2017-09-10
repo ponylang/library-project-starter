@@ -77,7 +77,7 @@ The Makefile assumes that you don't have any external dependencies that are mana
 
 ```make
 build/{PACKAGE}: build {PACKAGE}/*.pony
-  ponyc {PACKAGE} -o build
+  ponyc {PACKAGE} -o build --debug
 ```
 
 to
@@ -85,5 +85,5 @@ to
 ```make
 build/{PACKAGE}: build {PACKAGE}/*.pony
   stable fetch
-  stable env ponyc {PACKAGE} -o build
+  stable env ponyc {PACKAGE} -o build --debug
 ```
