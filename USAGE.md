@@ -1,16 +1,16 @@
 # Library Project Starter Usage
 
-The contents of this repo are designed to get you up and running with everything you need to start writing your awesome Pony library. If you copy all the contents of this repo into your new project you'll get:
+The contents of this repo are designed to get you up and running with everything you need to start writing your excellent Pony library. If you copy all the contents of this repo into your new project you'll get:
 
-- A Makefile to automate basic building and testing
+- A Makefile to automate building and testing
 - TravisCI setup (more actions will be required)
   * Build and test your project on each PR against most recent Pony release
-  * Support for daily cron job to test your project against bleeding-edge Pony master.
+  * Support for a daily cron job to test your project against bleeding-edge Pony master.
 - Basic `.gitignore`
 - Contribution guide that matches Pony's.
 - Code of Conduct that matches Pony's.
 - Style Guide that matches Pony's.
-- Basic README including:
+- README including:
   * TravisCI status badge
   * Project status
   * How to install using pony-stable
@@ -31,7 +31,7 @@ Make sure that you agree with them. Feel free to make changes to suit your parti
 
 ## What you need to update
 
-This repository is templated. You'll want to replace anything in {} with the correct value. The following template values are needed:
+This repository is templated. You'll want to replace anything in {} with the correct value. The following replacement values are required:
 
 - {USERNAME}: your GitHub username, for example: `ponylang`.
 - {REPO}: the name of your repository, for example: `ponyc`.
@@ -42,7 +42,7 @@ This repository is templated. You'll want to replace anything in {} with the cor
 
 ## About the CI setup
 
-You'll still need to setup TravisCI to take advantage of the included `.travis.yml` file.  To do this you'll need:
+You'll still need to setup TravisCI to take advantage of the included `.travis.yml` file.  To do this, you'll need:
 
 - A TravisCI account
 - To grant TravisCI access to your repository
@@ -52,13 +52,13 @@ If you've never set up TravisCI before, we strongly suggest you check our their 
 
 ### You can also
 
-Set up a TravisCI cron job to run daily against the `master` branch of your repository. If you do, then the included `.travis.yml` file will test your project against both the latest released version of Pony as well as the latest changes on master.
+Set up a TravisCI cron job to run daily against the `master` branch of your repository. If you do, then the included `.travis.yml` file will test your project against both the latest released version of Pony as well as the most recent changes on master.
 
-Your PRs will be tested against the last Pony release and any cronjob you set up will be tested using the latest commit to the `master` branch in the [ponylang/ponyc repo](https://github.com/ponylang/ponyc).
+Your PRs will be tested against the last Pony release, and any cronjob you set up will be tested using the latest commit to the `master` branch in the [ponylang/ponyc repo](https://github.com/ponylang/ponyc).
 
 ### What you might also need
 
-The CI setup only sets up a single matrix Linux build using TravisCI. This is done under the assumption that most libraries won't have OS specific code. If your project does have OS specific code, you'll possibly need add:
+The CI setup only sets up a single matrix Linux build using TravisCI. We are assuming that most libraries won't have OS specific code. If your project does have OS specific code, you'll possibly need to add:
 
 - A TravisCI macOS setup
 - Windows CI using appveyor
