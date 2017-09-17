@@ -3,7 +3,7 @@
 The contents of this repo are designed to get you up and running with everything you need to start writing your excellent Pony library. If you copy all the contents of this repo into your new project you'll get:
 
 - A Makefile to automate building and testing
-- TravisCI setup (more actions will be required)
+- CircleCI setup (more actions will be required)
   * Build and test your project on each PR against most recent Pony release
   * Support for a daily cron job to test your project against bleeding-edge Pony master.
 - Basic `.gitignore`
@@ -11,7 +11,7 @@ The contents of this repo are designed to get you up and running with everything
 - Code of Conduct that matches Pony's.
 - Style Guide that matches Pony's.
 - README including:
-  * TravisCI status badge
+  * CircleCI status badge
   * Project status
   * How to install using pony-stable
 
@@ -53,28 +53,21 @@ then you have to create a directory called `msgpack` at the root of your reposit
 
 ## About the CI setup
 
-You'll still need to setup TravisCI to take advantage of the included `.travis.yml` file.  To do this, you'll need:
+You'll still need to setup CircleCI to take advantage of the included CircleCI configuration file.  To do this, you'll need:
 
-- A TravisCI account
-- To grant TravisCI access to your repository
-- Navigate to Settings > Integrations & services in your GitHub project. Do "Add Service" and search for "TravisCI". Add it as an integrated service.
+- A CircleCI account
+- To grant CircleCI access to your repository
 
-If you've never set up TravisCI before, we strongly suggest you check our their [documentation](https://docs.travis-ci.com/).
-
-### You can also
-
-Set up a TravisCI cron job to run daily against the `master` branch of your repository. If you do, then the included `.travis.yml` file will test your project against both the latest released version of Pony as well as the most recent changes on master.
-
-Your PRs will be tested against the last Pony release, and any cronjob you set up will be tested using the latest commit to the `master` branch in the [ponylang/ponyc repo](https://github.com/ponylang/ponyc).
+If you've never set up CircleCI before, we strongly suggest you check our their [documentation](https://circleci.com/docs/2.0/).
 
 ### What you might also need
 
-The CI setup only sets up a single matrix Linux build using TravisCI. We are assuming that most libraries won't have OS specific code. If your project does have OS specific code, you'll possibly need to add:
+The CI setup only sets up a single matrix Linux build using CircleCI. We are assuming that most libraries won't have OS specific code. If your project does have OS specific code, you'll possibly need to add:
 
-- A TravisCI macOS setup
+- A CircleCI or TravisCI macOS setup
 - Windows CI using appveyor
 
-The CI setup also assumes that your project should perform the same regardless of LLVM version. If that isn't true for your project, you'll need to adjust the TravisCI configuration accordingly.
+The CI setup also assumes that your project should perform the same regardless of LLVM version. If that isn't true for your project, you'll need to adjust the CircleCI configuration accordingly.
 
 ## How Make structures your project
 
