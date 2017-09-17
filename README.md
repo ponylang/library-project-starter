@@ -4,7 +4,7 @@
 
 ## Status
 
-[![Build Status](https://travis-ci.org/{USERNAME}/{REPO}.svg?branch=master)](https://travis-ci.org/{USERNAME}/{REPO})
+[![CircleCI](https://circleci.com/gh/{USERNAME}/{REPO}.svg?style=svg)](https://circleci.com/gh/{USERNAME}/{REPO})
 
 {PROJECT_STATUS}
 
