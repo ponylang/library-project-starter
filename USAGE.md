@@ -69,25 +69,81 @@ The CI setup only sets up a single matrix Linux build using CircleCI. We are ass
 
 The CI setup also assumes that your project should perform the same regardless of LLVM version. If that isn't true for your project, you'll need to adjust the CircleCI configuration accordingly.
 
-## How Make structures your project
+## How to structure your project
 
 The Makefile assumes that your project will have:
 
 - A single package
 - That your tests are in the top-level of your package.
 - Tests will be built in the `build` directory
+- Example programs located in `examples` that you want to compile as part of
+    "testing"
+
+### Examples
+
+Each example program should be it's own directory in the `examples directory.
+When you run `build-examples` or `test`, example programs will be compiled to
+assure there is no API breakage. They will not, however, be run as there's no
+generic way to validate behavior.
+
+##
+
+### Available make commands
+
+- test
+
+Runs the `unit-tests` and `build-examples` commands
+
+- unit-tests
+
+Compiles your package and runs the Ponytest tests.
+
+- build-examples
+
+Compiles example programs in `examples` directory
+
+- clean
+
+Removes build artifacts for the specified config (defaults to `release`)
+
+- realclean
+
+Removes all build artifacts regardless of `config` value
+
+- TAGS
+
+Generates a `tags` file for the project using `ctags`. `ctags` installation is
+required to use this feature.
+
+- all
+
+Runs the `test` command
+
+- "bare"
+
+Running `make` without any command will execute the `test` command
+
+### Available make options
+
+- config
+
+Pass either `release` or `debug` depending on which type of build you want to
+do. The default is `release`.
+
+## Using Pony stable
 
 The Makefile assumes that you don't have any external dependencies that are managed by pony-stable. If you need to use stable, you'll need to update one of the Makefile rules:
 
 ```make
-build/{PACKAGE}: build {PACKAGE}/*.pony
-  ponyc {PACKAGE} -o build --debug
+COMPILE_WITH := ponyc
 ```
 
 to
 
 ```make
-build/{PACKAGE}: build {PACKAGE}/*.pony
-  stable fetch
-  stable env ponyc {PACKAGE} -o build --debug
+COMPILE_WITH := stable env ponyc
 ```
+
+Please note, you will need to update the Makefile to run `stable fetch` for you
+if you want it run automatically, or you will need to run it manually at least
+once in order to get your dependencies.
