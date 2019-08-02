@@ -1,8 +1,9 @@
 config ?= release
 
+PACKAGE := {PACKAGE}
 BUILD_DIR ?= build/$(config)
-SRC_DIR ?= {PACKAGE}
-tests_binary := $(BUILD_DIR)/{PACKAGE}
+SRC_DIR ?= $(PACKAGE)
+tests_binary := $(BUILD_DIR)/$(PACKAGE)
 COMPILE_WITH := ponyc
 
 ifdef config
