@@ -1,23 +1,41 @@
 version: 2
+
 jobs:
-  vs-ponyc-release:
+  release-vs-ponyc-release:
     docker:
       - image: ponylang/ponyc:release
     steps:
       - checkout
-      - run: make test
-  vs-ponyc-master:
+      - run: make test config=release
+
+  release-vs-ponyc-master:
     docker:
       - image: ponylang/ponyc:latest
     steps:
       - checkout
-      - run: make test
+      - run: make test config=release
+
+  debug-vs-ponyc-release:
+    docker:
+      - image: ponylang/ponyc:release
+    steps:
+      - checkout
+      - run: make test config=debug
+
+  debug-vs-ponyc-master:
+    docker:
+      - image: ponylang/ponyc:latest
+    steps:
+      - checkout
+      - run: make test config=debug
 
 workflows:
   version: 2
   commit:
     jobs:
-      - vs-ponyc-release
+      - release-vs-ponyc-release
+      - debug-vs-ponyc-release
+
   nightly:
     triggers:
       - schedule:
@@ -26,4 +44,5 @@ workflows:
             branches:
               only: master
     jobs:
-      - vs-ponyc-master
+      - release-vs-ponyc-master
+      - debug-vs-ponyc-master
