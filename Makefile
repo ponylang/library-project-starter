@@ -1,10 +1,12 @@
 config ?= release
 
 PACKAGE := {PACKAGE}
+COMPILE_WITH := ponyc
+
 BUILD_DIR ?= build/$(config)
 SRC_DIR ?= $(PACKAGE)
 tests_binary := $(BUILD_DIR)/$(PACKAGE)
-COMPILE_WITH := ponyc
+docs_dir := $(PACKAGE)-docs
 
 ifdef config
 	ifeq (,$(filter $(config),debug release))
@@ -36,6 +38,12 @@ clean:
 
 realclean:
 	rm -rf build
+
+$(docs_dir): $(GEN_FILES) $(SOURCE_FILES)
+	rm -rf $(docs_dir)
+	${PONYC} --docs-public --pass=docs $(SRC_DIR)
+
+docs: $(docs_dir)
 
 TAGS:
 	ctags --recurse=yes $(SRC_DIR)

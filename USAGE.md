@@ -101,7 +101,7 @@ generic way to validate behavior.
 
 - test
 
-Runs the `unit-tests` and `build-examples` commands
+Runs the `unit-tests` and `build-examples` commands.
 
 - unit-tests
 
@@ -109,15 +109,19 @@ Compiles your package and runs the Ponytest tests.
 
 - build-examples
 
-Compiles example programs in `examples` directory
+Compiles example programs in `examples` directory.
 
 - clean
 
-Removes build artifacts for the specified config (defaults to `release`)
+Removes build artifacts for the specified config (defaults to `release`). Doesn't remove documentation as documentation isn't config specific. Use `realclean` to remove all artifacts including documentation.
 
 - realclean
 
-Removes all build artifacts regardless of `config` value
+Removes all build artifacts regardless of `config` value.
+
+- docs
+
+Builds the public documentation for your the library.
 
 - TAGS
 
@@ -126,11 +130,11 @@ required to use this feature.
 
 - all
 
-Runs the `test` command
+Runs the `test` command.
 
 - "bare"
 
-Running `make` without any command will execute the `test` command
+Running `make` without any command will execute the `test` command.
 
 ### Available make options
 
