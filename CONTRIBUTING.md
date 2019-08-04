@@ -12,7 +12,7 @@ Additional notes regarding formatting:
 
 * [Documentation formatting](#documentation-formatting)
 * [Code formatting](#code-formatting)
-* [File Naming](#standard-library-file-naming)
+* [File naming](#file-naming)
 
 ## Bug report
 
@@ -28,7 +28,7 @@ Provide the following details:
 
 If possible, try to isolate the problem and provide just enough code to demonstrate it. Add any related information which might help to fix the issue.
 
-## How to Contribute
+## How to contribute
 
 This project uses a fairly standard GitHub pull request workflow. If you have already contributed to a project via GitHub pull request, you can skip this section and proceed to the [specific details of what we ask for in a pull request](#pull-request). If this is your first time contributing to a project via GitHub, read on.
 
@@ -131,6 +131,6 @@ The details:
 
 All Pony sources should follow the [Pony standard library style guide](https://github.com/ponylang/ponyc/blob/master/STYLE_GUIDE.md).
 
-##  File naming
+## File naming
 
 Pony code follows the [Pony standard library file naming guidelines](https://github.com/ponylang/ponyc/blob/master/STYLE_GUIDE.md#naming).
