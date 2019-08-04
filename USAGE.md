@@ -17,16 +17,15 @@ The contents of this repo are designed to get you up and running with everything
   * Project status
   * How to install using pony-stable
 
-
 You still need to add:
 
-- A License
 - A directory at the root of the project containing your Pony source code
 
 ## It's opinionated
 
 This starter pack is opinionated. We suggest that you review:
 
+- [LICENSE](LICENSE)
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [STYLE_GUIDE.md](STYLE_GUIDE.md)
@@ -49,6 +48,8 @@ This repository is templated. You'll want to replace anything in {} with the cor
 - {COC_EMAIL}: email address that Code of Conduct violations should be reported to, for example: `coc@ponylang.org`.
 - {PROJECT_DESCRIPTION}: a paragraph describing your project
 - {PROJECT_STATUS}: paragraph or two describing the status of your project. Is it alpha? beta? production-ready? What's left to implement?
+- {COPYRIGHT_YEAR}: if you use the enclosed BSD 2 clause license, you'll need to set the Copyright year.
+- {COPYRIGHT_HOLDER}: if you use the enclosed BSD 2 clause license, you'll need to set the Copyright holder.
 
 ## What you need to create
 
