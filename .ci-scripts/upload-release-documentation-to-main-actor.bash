@@ -3,8 +3,9 @@
 set -eu
 
 # Needs to be supplied
-USERNAME={USERNAME}
-PACKAGE_NAME={PACKAGE}
+USERNAME="{USERNAME}"
+PACKAGE_NAME="{PACKAGE}"
+GITHUB_USER="{GITHUB_USER}"
 
 # Gather expected arguments.
 if [ $# -le 2 ]
@@ -26,7 +27,6 @@ git config --global user.name "{COMMIT_NAME}"
 git config --global push.default simple
 
 # Shouldn't need to touch these
-GITHUB_USER="${USERNAME}"
 BUILD_DIR="build/${PACKAGE_NAME}-docs"
 DOCS_DIR="${GEN_MD}/${PACKAGE_NAME}/${TAG}"
 

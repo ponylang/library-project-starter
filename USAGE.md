@@ -42,7 +42,7 @@ Additionally, the CONTRIBUTING.md assumes your project is hosted on GitHub and c
 
 This repository is templated. You'll want to replace anything in {} with the correct value. The following replacement values are required:
 
-- {USERNAME}: your GitHub username, for example: `ponylang`.
+- {USERNAME}: your GitHub username or organization name, for example: `ponylang`.
 - {REPO}: the name of your repository, for example: `ponyc`.
 - {PACKAGE}: the name of your libraries package, for example: `msgpack`.
 - {COC_EMAIL}: email address that Code of Conduct violations should be reported to, for example: `coc@ponylang.org`.
@@ -53,6 +53,7 @@ This repository is templated. You'll want to replace anything in {} with the cor
 - {COMMIT_NAME}: Name to use for commits that code that is part of this package will create, for example: `ponylang-main`.
 - {COMMIT_EMAIL}: Email address to use for commits that code that is part of this package will create, for example: `main@ponylang.io`.
 - {GITHUB_ACCESS_TOKEN_NAME}: Name of CircleCI environment variable that your GitHub personal access token that allows for `public_repo` access is stored in.
+- {GITHUB_USER}: Username for the owner of the GitHub access token
 
 ## What you need to create
 

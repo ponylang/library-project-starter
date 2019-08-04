@@ -29,6 +29,13 @@ jobs:
       - checkout
       - run: make test config=debug
 
+  cut-release:
+    docker:
+      - image: ponylang/main.actor-ci:standard
+    steps:
+      - checkout
+      - run: bash .ci-scripts/release.bash "$CIRCLE-TAG" "${GITHUB_ACCESS_TOKEN_NAME}"
+
   generate-documentation-pr-for-main-dot-actor:
     docker:
       - image: ponylang/main.actor-ci:standard
@@ -45,11 +52,21 @@ jobs:
 
 workflows:
   version: 2.1
+
   on-every-commit:
     jobs:
       - verify-changelog
       - release-vs-ponyc-release
       - debug-vs-ponyc-release
+
+  create-release:
+    jobs:
+      - cut-release:
+          filters:
+            tags:
+              only: /^release-\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
 
   on-release-being-tagged:
     jobs:
