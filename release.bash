@@ -23,7 +23,6 @@ if [ $# -le 3 ]; then
   exit 1
 fi
 
-set -eu
 ghuser=$1
 ghtoken=$2
 version=$3
