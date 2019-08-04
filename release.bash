@@ -20,6 +20,7 @@ verify_args() {
 
 if [ $# -le 3 ]; then
   echo "GH username, GH personal access token, version, commit arguments required"
+  exit 1
 fi
 
 set -eu
