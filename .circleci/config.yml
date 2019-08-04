@@ -29,6 +29,13 @@ jobs:
       - checkout
       - run: make test config=debug
 
+  debug-vs-ponyc-master:
+    docker:
+      - image: ponylang/ponyc:latest
+    steps:
+      - checkout
+      - run: make test config=debug
+
   cut-release:
     docker:
       - image: ponylang/main.actor-ci:standard
@@ -42,13 +49,6 @@ jobs:
     steps:
       - checkout
       - run: bash .ci-scripts/upload-release-documentation-to-main-actor.bash "$CIRCLE_TAG" "${GITHUB_ACCESS_TOKEN_NAME}"
-
-  debug-vs-ponyc-master:
-    docker:
-      - image: ponylang/ponyc:latest
-    steps:
-      - checkout
-      - run: make test config=debug
 
 workflows:
   version: 2.1
