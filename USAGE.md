@@ -10,10 +10,13 @@ The contents of this repo are designed to get you up and running with everything
 - Contribution guide that matches Pony's.
 - Code of Conduct that matches Pony's.
 - Style Guide that matches Pony's.
+- Script to automate releasing versions of your library
+- CHANGELOG file for tracking changes to our project
 - README including:
   * CircleCI status badge
   * Project status
   * How to install using pony-stable
+
 
 You still need to add:
 

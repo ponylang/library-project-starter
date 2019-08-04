@@ -1,6 +1,13 @@
 version: 2
 
 jobs:
+  verify-changelog:
+    docker:
+      - image: ponylang/changelog-tool:release
+    steps:
+      - checkout
+      - run: changelog-tool verify
+
   release-vs-ponyc-release:
     docker:
       - image: ponylang/ponyc:release
@@ -33,6 +40,7 @@ workflows:
   version: 2
   commit:
     jobs:
+      - verify-changelog
       - release-vs-ponyc-release
       - debug-vs-ponyc-release
 
