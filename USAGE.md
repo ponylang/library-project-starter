@@ -33,6 +33,12 @@ This starter pack is opinionated. We suggest that you review:
 
 Make sure that you agree with them. Feel free to make changes to suit your particular style.
 
+## It assumes you are using GitHub for hosting
+
+Both `release.bash` and `RELEASE_PROCESS.md` assume you are using GitHub. Accordingly, as part of the release process, they contains GitHub specific code and instructions related to adding and publishing release notes via GitHub's release feature. If you aren't using GitHub, you can still use the included release files but, you will have to modify them a little.
+
+Additionally, the CONTRIBUTING.md assumes your project is hosted on GitHub and contains links to issues, forking, etc that are GitHub specific. If you aren't hosting on GitHub, you should update those links accordingly.
+
 ## What you need to update
 
 This repository is templated. You'll want to replace anything in {} with the correct value. The following replacement values are required:
