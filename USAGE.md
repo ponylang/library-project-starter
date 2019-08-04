@@ -50,6 +50,9 @@ This repository is templated. You'll want to replace anything in {} with the cor
 - {PROJECT_STATUS}: paragraph or two describing the status of your project. Is it alpha? beta? production-ready? What's left to implement?
 - {COPYRIGHT_YEAR}: if you use the enclosed BSD 2 clause license, you'll need to set the Copyright year.
 - {COPYRIGHT_HOLDER}: if you use the enclosed BSD 2 clause license, you'll need to set the Copyright holder.
+- {COMMIT_NAME}: Name to use for commits that code that is part of this package will create, for example: `ponylang-main`.
+- {COMMIT_EMAIL}: Email address to use for commits that code that is part of this package will create, for example: `main@ponylang.io`.
+- {GITHUB_ACCESS_TOKEN_NAME}: Name of CircleCI environment variable that your GitHub personal access token that allows for `public_repo` access is stored in.
 
 ## What you need to create
 

@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   verify-changelog:
@@ -29,6 +29,13 @@ jobs:
       - checkout
       - run: make test config=debug
 
+  generate-documentation-pr-for-main-dot-actor:
+    docker:
+      - image: ponylang/main.actor-ci:standard
+    steps:
+      - checkout
+      - run: bash .ci-scripts/upload-release-documentation-to-main-actor.bash "$CIRCLE_TAG" "${GITHUB_ACCESS_TOKEN_NAME}"
+
   debug-vs-ponyc-master:
     docker:
       - image: ponylang/ponyc:latest
@@ -37,14 +44,23 @@ jobs:
       - run: make test config=debug
 
 workflows:
-  version: 2
-  commit:
+  version: 2.1
+  on-every-commit:
     jobs:
       - verify-changelog
       - release-vs-ponyc-release
       - debug-vs-ponyc-release
 
-  nightly:
+  on-release-being-tagged:
+    jobs:
+      - generate-documentation-pr-for-main-dot-actor:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
+
+  daily-check-for-breakage:
     triggers:
       - schedule:
           cron: "0 0 * * *"
