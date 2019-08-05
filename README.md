@@ -4,7 +4,7 @@
 
 ## Status
 
-[![CircleCI](https://circleci.com/gh/{USERNAME}/{REPO}.svg?style=svg)](https://circleci.com/gh/{USERNAME}/{REPO})
+[![CircleCI](https://circleci.com/gh/{REPO_OWNER}/{REPO}.svg?style=svg)](https://circleci.com/gh/{REPO_OWNER}/{REPO})
 
 {PROJECT_STATUS}
 
@@ -14,9 +14,9 @@
 * Update your `bundle.json`
 
 ```json
-{ 
+{
   "type": "github",
-  "repo": "{USERNAME}/{REPO}"
+  "repo": "{REPO_OWNER}/{REPO}"
 }
 ```
 

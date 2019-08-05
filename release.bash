@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-USERNAME="{USERNAME}"
+REPO_OWNER="{REPO_OWNER}"
 REPONAME="{REPO}"
 
 verify_args() {
@@ -91,7 +91,7 @@ json=$(jq -n \
 --arg body "$body" \
 "${jsontemplate}")
 
-curl -X POST "https://api.github.com/repos/${USERNAME}/${REPO}/releases" \
+curl -X POST "https://api.github.com/repos/${REPO_OWNER}/${REPO}/releases" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "${ghuser}:${ghtoken}" \
   --data "${json}"

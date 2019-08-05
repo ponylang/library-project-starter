@@ -3,7 +3,7 @@
 set -eu
 
 # Needs to be supplied
-USERNAME="{USERNAME}"
+REPO_OWNER="{REPO_OWNER}"
 PACKAGE_NAME="{PACKAGE}"
 GITHUB_USER="{GITHUB_USER}"
 
@@ -33,7 +33,7 @@ DOCS_DIR="${GEN_MD}/${PACKAGE_NAME}/${TAG}"
 # Generated markdown repo
 echo "Cloning main.actor-package-markdown repo into ${GEN_MD}"
 git clone \
-  "https://${GITHUB_TOKEN}@github.com/${USERNAME}/main.actor-package-markdown.git" \
+  "https://${GITHUB_TOKEN}@github.com/${REPO_OWNER}/main.actor-package-markdown.git" \
   "${GEN_MD}"
 
 # Make the docs

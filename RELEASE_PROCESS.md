@@ -20,7 +20,7 @@ Before getting started, you will need a number for the version that you will be 
 Please note that the release script was written with the assumption that you are using a clone of the `{REPO}` repo. You have to be using a clone rather than a fork. Further, due to how git works, you need to make sure that both your `master` branch is up-to-date. It is advised to your do this but making a fresh clone of the `{REPO}` repo from which you will release. For example:
 
 ```bash
-git clone git@github.com:{USERNAME}/{REPO}.git {REPO}-release-clean
+git clone git@github.com:{REPO_OWNER}/{REPO}.git {REPO}-release-clean
 cd {REPO}-release-clean
 ```
 
@@ -42,7 +42,7 @@ bash release.bash seantallen 9999998gk48888ddd78a9fd12345a12870987uk \
 Navigate to the GitHub page for the release you just created. It will be something like:
 
 ```
-https://github.com/{USERNAME}/{REPO}/releases/tag/0.3.1
+https://github.com/{REPO_OWNER}/{REPO}/releases/tag/0.3.1
 ```
 
 Copy the url to the page. You'll need it for the next two steps.

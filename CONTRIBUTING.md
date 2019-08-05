@@ -16,7 +16,7 @@ Additional notes regarding formatting:
 
 ## Bug report
 
-First of all please [search existing issues](https://github.com/{USERNAME}/{REPO}/issues) to make sure your issue hasn't already been reported. If you cannot find a suitable issue — [create a new one](https://github.com/{USERNAME}/{REPO}/issues/new).
+First of all please [search existing issues](https://github.com/{REPO_OWNER}/{REPO}/issues) to make sure your issue hasn't already been reported. If you cannot find a suitable issue — [create a new one](https://github.com/{REPO_OWNER}/{REPO}/issues/new).
 
 Provide the following details:
 
@@ -34,11 +34,11 @@ This project uses a fairly standard GitHub pull request workflow. If you have al
 
 Here is the basic GitHub workflow:
 
-1. Fork this repo. you can do this via the GitHub website. This will result in you having your own copy of the repo under your GitHub account. 
+1. Fork this repo. you can do this via the GitHub website. This will result in you having your own copy of the repo under your GitHub account.
 2. Clone your forked repo to your local machine
 3. Make a branch for your change
 4. Make your change on that branch
-5. Push your change to your repo 
+5. Push your change to your repo
 6. Use the github ui to open a PR
 
 Some things to note that aren't immediately obvious to folks just starting out:
@@ -78,7 +78,7 @@ Documentation is not "source code." As such, it should not be wrapped at 80 colu
 
 All code examples in documentation should be formatted in a fashion appropriate to the language in question.
 
-All command line examples in documentation should be presented in a copy and paste friendly fashion. Assume the user is using the `bash` shell. GitHub formatting on long command lines can be unfriendly to copy-and-paste. Long command lines should be broken up using `\` so that each line is no more than 80 columns. Wrapping at 80 columns should result in a good display experience in GitHub. Additionally, continuation lines should be indented two spaces. 
+All command line examples in documentation should be presented in a copy and paste friendly fashion. Assume the user is using the `bash` shell. GitHub formatting on long command lines can be unfriendly to copy-and-paste. Long command lines should be broken up using `\` so that each line is no more than 80 columns. Wrapping at 80 columns should result in a good display experience in GitHub. Additionally, continuation lines should be indented two spaces.
 
 OK:
 
