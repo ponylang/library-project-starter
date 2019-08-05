@@ -12,6 +12,13 @@ git config --global user.email "{COMMIT_EMAIL}"
 git config --global user.name "{COMMIT_NAME}"
 git config --global push.default simple
 
+# Gather expected arguments.
+if [ $# -lt 2 ]
+then
+  echo "Tag and GH personal access token are required"
+  exit 1
+fi
+
 TAG=$1
 GITHUB_TOKEN=$2
 # changes tag from "release-1.0.0" to "1.0.0"
@@ -31,7 +38,7 @@ git commit -m "Release ${VERSION}"
 git tag "${VERSION}"
 
 # push to release to remote
-git push origin master "${VERSION}"
+git push origin HEAD:master "${VERSION}"
 
 # update CHANGELOG for new entries
 changelog-tool unreleased -e
@@ -41,7 +48,7 @@ git add CHANGELOG.md
 git commit -m "Add unreleased section to CHANGELOG post ${VERSION} release
 
 [skip ci]"
-git push origin master
+git push origin HEAD:master
 
 # release body
 echo "Preparing to update GitHub release notes..."

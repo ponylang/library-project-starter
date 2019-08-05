@@ -8,7 +8,7 @@ PACKAGE_NAME="{PACKAGE}"
 GITHUB_USER="{GITHUB_USER}"
 
 # Gather expected arguments.
-if [ $# -le 2 ]
+if [ $# -lt 2 ]
 then
   echo "Tag and GH personal access token are required"
   exit 1

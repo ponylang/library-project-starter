@@ -41,7 +41,7 @@ jobs:
       - image: ponylang/main.actor-ci:standard
     steps:
       - checkout
-      - run: bash .ci-scripts/release.bash "$CIRCLE-TAG" "${GITHUB_ACCESS_TOKEN_NAME}"
+      - run: bash .ci-scripts/release.bash "$CIRCLE_TAG" "${GITHUB_ACCESS_TOKEN_NAME}"
 
   generate-documentation-pr-for-main-dot-actor:
     docker:
