@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 
 REPO_OWNER="{REPO_OWNER}"
-REPONAME="{REPO}"
+REPO_NAME="{REPO_NAME}"
 
 verify_args() {
   echo "Cutting a release for version $version with commit $commit"
@@ -91,7 +91,7 @@ json=$(jq -n \
 --arg body "$body" \
 "${jsontemplate}")
 
-curl -X POST "https://api.github.com/repos/${REPO_OWNER}/${REPO}/releases" \
+curl -X POST "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "${ghuser}:${ghtoken}" \
   --data "${json}"

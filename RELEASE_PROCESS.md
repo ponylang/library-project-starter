@@ -1,4 +1,4 @@
-# How to cut a {REPO} release
+# How to cut a {REPO_NAME} release
 
 This document is aimed at members of the Pony team who might be cutting a release of Pony. It serves as a checklist that can take you through doing a release step-by-step.
 
@@ -6,7 +6,7 @@ This document is aimed at members of the Pony team who might be cutting a releas
 
 In order to do a release, you absolutely must have:
 
-* Commit access to the `{REPO}` repo
+* Commit access to the `{REPO_NAME}` repo
 * Version 0.3.x of the [changelog tool](https://github.com/ponylang/changelog-tool/releases) installed
 * [git](https://git-scm.com/), [cURL](https://curl.haxx.se/), and [jq](https://stedolan.github.io/jq/) installed
 * An account on the [Pony Zulip](https://ponylang.zulipchat.com)
@@ -17,14 +17,14 @@ Before getting started, you will need a number for the version that you will be 
 
 ## Releasing
 
-Please note that the release script was written with the assumption that you are using a clone of the `{REPO}` repo. You have to be using a clone rather than a fork. Further, due to how git works, you need to make sure that both your `master` branch is up-to-date. It is advised to your do this but making a fresh clone of the `{REPO}` repo from which you will release. For example:
+Please note that the release script was written with the assumption that you are using a clone of the `{REPO_NAME}` repo. You have to be using a clone rather than a fork. Further, due to how git works, you need to make sure that both your `master` branch is up-to-date. It is advised to your do this but making a fresh clone of the `{REPO_NAME}` repo from which you will release. For example:
 
 ```bash
-git clone git@github.com:{REPO_OWNER}/{REPO}.git {REPO}-release-clean
-cd {REPO}-release-clean
+git clone git@github.com:{REPO_OWNER}/{REPO_NAME}.git {REPO_NAME}-release-clean
+cd {REPO_NAME}-release-clean
 ```
 
-Any commit is eligible to be a "golden commit" so long as it has passed all CI checks. However, the normal case for the release tool that you will use assumes you will use a "golden commit" that is the most recent change to the `master` branch of {REPO}. If you deviate from that expectation, then some manual intervention might be required for you to continue the release process. Once manual intervention is involved, there is no way to restart the automated process and you'll have to do each of the steps in the release script by hand.
+Any commit is eligible to be a "golden commit" so long as it has passed all CI checks. However, the normal case for the release tool that you will use assumes you will use a "golden commit" that is the most recent change to the `master` branch of {REPO_NAME}. If you deviate from that expectation, then some manual intervention might be required for you to continue the release process. Once manual intervention is involved, there is no way to restart the automated process and you'll have to do each of the steps in the release script by hand.
 
 For the duration of this document, we will pretend the "golden commit" version is `8a8ee28` and the version is `0.3.1`. Any place you see those values, please substitute your own version.
 
@@ -42,14 +42,14 @@ bash release.bash seantallen 9999998gk48888ddd78a9fd12345a12870987uk \
 Navigate to the GitHub page for the release you just created. It will be something like:
 
 ```
-https://github.com/{REPO_OWNER}/{REPO}/releases/tag/0.3.1
+https://github.com/{REPO_OWNER}/{REPO_NAME}/releases/tag/0.3.1
 ```
 
 Copy the url to the page. You'll need it for the next two steps.
 
 ### Inform the Pony Zulip
 
-Once you have the URL for the release notes, drop a note in the [#announce stream](https://ponylang.zulipchat.com/#narrow/stream/189932-announce) with a topic like "{REPO} 0.3.1 has been released" of the Pony Zulip letting everyone know that the release is out and include a link the release notes.
+Once you have the URL for the release notes, drop a note in the [#announce stream](https://ponylang.zulipchat.com/#narrow/stream/189932-announce) with a topic like "{REPO_NAME} 0.3.1 has been released" of the Pony Zulip letting everyone know that the release is out and include a link the release notes.
 
 If this is an "emergency release" that is designed to get a high priority bug fix out, be sure to note that everyone is advised to update ASAP.
 

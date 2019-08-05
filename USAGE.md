@@ -43,7 +43,7 @@ Additionally, the CONTRIBUTING.md assumes your project is hosted on GitHub and c
 This repository is templated. You'll want to replace anything in {} with the correct value. The following replacement values are required:
 
 - {REPO_OWNER}: your GitHub username or organization name, for example: `ponylang`.
-- {REPO}: the name of your repository, for example: `ponyc`.
+- {REPO_NAME}: the name of your repository, for example: `ponyc`.
 - {PACKAGE}: the name of your libraries package, for example: `msgpack`.
 - {COC_EMAIL}: email address that Code of Conduct violations should be reported to, for example: `coc@ponylang.org`.
 - {PROJECT_DESCRIPTION}: a paragraph describing your project

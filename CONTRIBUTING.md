@@ -1,6 +1,6 @@
 # Contributing
 
-You want to contribute to {REPO}? Awesome.
+You want to contribute to {REPO_NAME}? Awesome.
 
 There are a number of ways to contribute. As this document is a little long, feel free to jump to the section that applies to you currently:
 
@@ -16,7 +16,7 @@ Additional notes regarding formatting:
 
 ## Bug report
 
-First of all please [search existing issues](https://github.com/{REPO_OWNER}/{REPO}/issues) to make sure your issue hasn't already been reported. If you cannot find a suitable issue — [create a new one](https://github.com/{REPO_OWNER}/{REPO}/issues/new).
+First of all please [search existing issues](https://github.com/{REPO_OWNER}/{REPO_NAME}/issues) to make sure your issue hasn't already been reported. If you cannot find a suitable issue — [create a new one](https://github.com/{REPO_OWNER}/{REPO_NAME}/issues/new).
 
 Provide the following details:
 

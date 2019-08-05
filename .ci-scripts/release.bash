@@ -3,8 +3,8 @@
 set -o errexit
 set -o nounset
 
-REPO_OWNER}"
-REPO="{REPO}"
+REPO_OWNER={REPO_OWNER}"
+REPO_NAME="{REPO_NAME}"
 GITHUB_USER="{GITHUB_USER}"
 
 # Who we are for git
@@ -70,7 +70,7 @@ json=$(jq -n \
 
 echo "Uploading release notes..."
 
-result=$(curl -X POST "https://api.github.com/repos/${REPO_OWNER}/${REPO}/releases" \
+result=$(curl -X POST "https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -u "${GITHUB_USER}:${GITHUB_TOKEN}" \
   --data "${json}")
