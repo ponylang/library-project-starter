@@ -7,6 +7,11 @@ USERNAME="{USERNAME}"
 PACKAGE_NAME="{PACKAGE}"
 GITHUB_USER="{GITHUB_USER}"
 
+# Who we are for git
+git config --global user.email "{COMMIT_EMAIL}"
+git config --global user.name "{COMMIT_NAME}"
+git config --global push.default simple
+
 # Gather expected arguments.
 if [ $# -lt 2 ]
 then
@@ -20,11 +25,6 @@ GEN_MD="$(mktemp -d)"
 # From command line
 TAG=$1
 GITHUB_TOKEN=$2
-
-# Who we are for git
-git config --global user.email "{COMMIT_EMAIL}"
-git config --global user.name "{COMMIT_NAME}"
-git config --global push.default simple
 
 # Shouldn't need to touch these
 BUILD_DIR="build/${PACKAGE_NAME}-docs"
